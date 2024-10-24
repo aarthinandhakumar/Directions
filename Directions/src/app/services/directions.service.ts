@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DirectionsService {
 
-  private apiKey: string = 'mHGsqhtDWG5unslZx4A0FmCHvrneL3Ns';
+  private apiKey: string = '';
 
   constructor(private http: HttpClient) { }
 
