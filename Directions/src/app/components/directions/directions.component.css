@@ -1,0 +1,84 @@
+input {
+    border: 2px solid black;
+    width: 150px;
+    padding: 5px;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+/* Set a fixed width for the entire table */
+table {
+    margin-top: 20px;
+    width: 1000px; /* Set your desired fixed width here */
+    border-collapse: collapse; /* Ensures no space between cells */
+    table-layout: fixed; /* Ensures the table has fixed column widths */
+  }
+  
+  
+  /* Remove borders from table header and data cells */
+  table td, 
+  table th {
+    border: none;
+    padding: 10px 15px; /* Adds padding for spacing inside cells */
+    box-sizing: border-box; /* Ensures padding doesn't affect the cell's fixed size */
+    white-space: nowrap; /* Prevents text from wrapping inside the cell */
+    overflow: hidden; /* Ensures that overflowing content is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
+  }
+  
+  /* Style for table body rows and columns */
+  table tbody tr, 
+  table tbody td {
+    background-color: black;
+    color: white;
+    padding: 10px 15px; /* Adds enough space inside each cell */
+  }
+  
+  table td:nth-child(2), 
+table th:nth-child(2) {
+    width: 80%;
+}
+
+table td:nth-child(1), 
+table th:nth-child(1) {
+ text-align: center;
+ width: 10%;
+  
+}
+
+table tbody tr {
+    border-bottom: 1px solid rgba(211, 211, 211, 0.3); /* Light gray with reduced opacity */
+}
+
+table th {
+    background-color: rgb(195, 220, 212);
+    padding: 5px; /* Remove padding to reduce height */
+    font-weight: bold; /* Use font-weight instead of font-size: bold */
+    line-height: 1; /* Optional: control the line height to ensure minimal space */
+}
+
+.selected-step {
+    border: 1px solid #ccc; /* Optional: add a border for visual separation */
+    border-radius: 5px; /* Optional: round the corners */
+    padding: 10px; /* Add some padding for spacing */
+    max-width: 600px; /* Set a maximum width for the container */
+    margin: 20px ; /* Center the container */
+    background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+#selectedStepnarrative {
+    margin: 0 0 10px; /* Margin below narrative */
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.json-output {
+    background-color: #eee; /* Light gray background for JSON */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Round the corners of the output div */
+    word-wrap: break-word; /* Break long words if necessary */
+    font-family: Arial, Helvetica, sans-serif; /* Same font for consistency */
+    font-size: 14px; /* Adjust font size for readability */
+    color: gray;
+}

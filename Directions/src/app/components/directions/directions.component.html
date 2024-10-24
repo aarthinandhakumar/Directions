@@ -1,0 +1,37 @@
+<div>
+    <h2>MapQuest</h2>
+    
+    <div>
+      <label for="from"></label>
+      <input id="from" [(ngModel)]="from" (input)="onLocationChange()" /> <!-- From field-->
+      
+      <label for="to"></label>
+      <input id="to" [(ngModel)]="to" (input)="onLocationChange()" /> <!-- To field-->
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th colspan="3" style="text-align: left;">Distance: {{ totalDistance.toFixed(4) }} m - Time: {{ totalTime }}</th> <!-- Display total distance and time-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let step of directions?.legs[0].maneuvers; let i = index" (click)="onStepSelect(step)">
+          <td>{{ i + 1 }}.</td>
+          <td>{{ step.narrative }}</td>
+          <td>{{ step.distance.toFixed(3) }} m</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="selectedStep" class="selected-step">
+      <div id="selectedStepnarrative">{{ selectedStep.narrative }}</div>
+      <div class="json-output">{{ selectedStep | json }}</div> <!-- Display data associated with a step in the directions-->
+  </div>
+  
+  
